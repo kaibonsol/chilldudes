@@ -21,6 +21,7 @@ const connectionString = `postgresql://${process.env.PG_USER}:${process.env.PG_P
 
 const pool = new Pool({
     connectionString: isProduction ? process.env.DATABASE_URL : connectionString,
+    ssl: {rejectUnauthorized: false} // comment out for development environment
 })
 
 
